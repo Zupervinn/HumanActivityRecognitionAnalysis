@@ -13,26 +13,24 @@ x_train <- read.table("X_train.txt")
 names(x_train)[1:561] <- features
 y_train <- read.table("y_train.txt", col.names ="training_labels")
 
-subtrain_x <- cbind(sub_train,y_train)
-subtrain_xy <- cbind(subtrain_x, x_train)
-
-
 sub_test<- read.table("subject_test.txt", col.names="subject")
 x_test<- read.table("X_test.txt")
 names(x_test)[1:561] <- features
 y_test<- read.table("y_test.txt", col.names ="training_labels")
+
+subtrain_x <- cbind(sub_train,y_train)
+subtrain_xy <- cbind(subtrain_x, x_train)
 
 subtest_x <- cbind(sub_test, y_test)
 subtest_xy <- cbind(subtest_x, x_test)
 
 train_test<- rbind(subtest_xy,subtrain_xy)
 
-newvars_mean <- train_test[,grepl("mean\\(\\)", names(train_test))] #refer to regular expression to explain the \\"
+newvars_mean <- train_test[,grepl("mean\\(\\)", names(train_test))]
 newvars_std <- train_test[,grepl("std\\(\\)", names(train_test))]
 
 subject_traininglabels <- train_test[,c(1,2)]
 mean_std <- cbind(newvars_mean, newvars_std) 
-
 
 newdf <- cbind(subject_traininglabels,mean_std)
 
