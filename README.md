@@ -85,3 +85,5 @@ melt<- melt(tidydata, id=c("subject", "activity"), measure.vars= names(tidydata[
 
 ######## using dcast to get the mean of all the variables and arranging subject and activity in ascending orders. 
 tidydata_mean<- dcast(melt, subject + activity ~variable, mean)
+
+#######
