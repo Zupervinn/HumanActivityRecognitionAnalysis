@@ -1,9 +1,12 @@
 ## HumanActivityRecognitionAnalysis
 Getting & Cleaning Data project - experiments
 
-library(plyr) # Mutate & rename function
-library(dplyr) # Mutate & rename function
-library(reshape2) #melt & dcast function
+######## Mutate & rename function
+######## Mutate & rename function
+######## Melt & dcast function
+library(plyr) 
+library(dplyr) 
+library(reshape2) 
 
 ## reading and preparing files for analysis 
 
