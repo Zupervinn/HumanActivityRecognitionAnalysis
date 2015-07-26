@@ -5,7 +5,9 @@ Getting & Cleaning Data project - experiments
 ######## Mutate & rename function
 ######## Melt & dcast function
 library(plyr) 
+
 library(dplyr) 
+
 library(reshape2) 
 
 ## reading and preparing files for analysis 
@@ -13,7 +15,9 @@ library(reshape2)
 
 ######## reads the feature.txt file and turn it into a list so it can be used to rename x_train.
 features <- read.table("features.txt") %>% select(V2) 
+
 features <- features[, "V2"]
+
 features <- as.vector(features) 
 
 ########reads subject_train.txt and renam column name to subject
